@@ -1,28 +1,29 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/enviroments/enviroments';
 @Injectable({
   providedIn: 'root'
 })
 export class NewsapiservicesService {
 
-  constructor(private _http:HttpClient) { }
-  // e35a561c2e254fe4b3ca2dcc6cacf659
-  newApiUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=e35a561c2e254fe4b3ca2dcc6cacf659"
- 
-  techApiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=e35a561c2e254fe4b3ca2dcc6cacf659"
+  constructor(private _http: HttpClient) { }
 
-  businessApiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e35a561c2e254fe4b3ca2dcc6cacf659"
+  newApiUrl = environment.API_HEADLINE;
 
-  topHeading():Observable<any>{
+  techApiUrl = environment.API_TECH
+
+  businessApiUrl = environment.API_BUSINESS;
+
+  topHeading(): Observable<any> {
     return this._http.get(this.newApiUrl);
   }
-  
-  techNews():Observable<any>{
+
+  techNews(): Observable<any> {
     return this._http.get(this.techApiUrl)
   }
 
-  businessNews():Observable<any>{
+  businessNews(): Observable<any> {
     return this._http.get(this.businessApiUrl)
   }
 }
