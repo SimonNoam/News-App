@@ -4,7 +4,6 @@
     <ol>
       <li>Signup for a free api key from <a href="https://newsapi.org/">newsapi.org</a></li>
       <li>Replace the `YOUR_API_KEY` in the `src/app/news.service.ts` with the api key you recieved from step 1</li>
-      <li>Search for news articles by entering keywords into the search bar and clicking the search button</li>
       <li>Browse through the articles by clicking on the article title</li>
     </ol>
     <h2>Built With</h2>
